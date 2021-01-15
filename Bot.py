@@ -20,7 +20,7 @@ def create_connection(db_name, db_user, db_password, db_host, db_port):
     return connection
 
 connection = create_connection(
-    "pict_base", "postgres", "logocentrism1", "127.0.0.1", "5432"
+    "picture_base", "postgres", "logocentrism1", "127.0.0.1", "5432"
 )
 
 
@@ -34,7 +34,7 @@ def execute_read_query(connection, query):
     except OperationalError as e:
         print(f"The error '{e}' occurred")
 
-select_pictures = "SELECT * FROM picture"
+select_pictures = "SELECT * FROM pictures"
 pictures = execute_read_query(connection, select_pictures)
 
 #print(type(pictures))
@@ -45,7 +45,7 @@ for rows in pictures:
 #print(pict_dict)
 
 API_TOKEN = '1433598427:AAFMI1BDQw0DZ_YTvMAc--0A3IZgmWV8nLw'
-path = "C:/Users/User/Desktop/ocrd/images/"
+path = "C:/Users/User/Desktop/ocrd+/images/"
 bot = telebot.TeleBot(API_TOKEN)
 
 
